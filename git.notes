@@ -1,0 +1,87 @@
+//Configuración de Credenciales
+
+git config --global user.name "NestorJavier"
+git config --global user.email nestormendezg@outlook.com
+
+git config --list
+
+
+
+//inicializar repositorio
+git init
+
+//Verificar estado con
+git status
+
+//Agregar cambios
+git add [nombre del archivo si se quieren agregar todos los archivos simplemente se escribe un punto "."]
+
+//confirmar cambios el -m es la bandera del mensaje 
+git commit -m "añade index.html"
+
+//Stage, cuando los archivos estan en staging estan listos para ser confirmados, 
+//cuando estan en unstaging no estan listos
+//El siguiente comando es para sacar un archivo que esta en stage
+//por que hubo un error, es algo asi como hacer un uncommit
+git reset HEAD main.js
+
+//Si realizamos cambios y estos no nos gustaron
+//es posible revertir todo con el comando git checkout -- [archivo]
+//Esto es antes de hacer el commit osea cuando no esta en staging
+git checkout -- index.html
+
+//gitIgnore
+//para ignorar una carpeta se escribe [nombrecarpeta/]
+[images/]
+//Para ignorara archivo
+config.dat
+//Esto es obviamente debtro del archivo .gitignore
+
+
+//log
+git.log
+//muestra un historial de los commits realizados
+//Con datos del mismo, uno de los datos es un codigo hash
+//este codigo identifica cada uno de los commits realizados
+//con este codigo hash es posible regresar a ver como era el estado del proyecto en ese commit
+//modificarlo y experimentar
+//Esto ultimo es posible con el comando
+git checkout <hash>
+//y listo, ya cambiamos a el estado del proyecto en ese commit
+
+//Ramas, la rama original siempre es master
+//las ramas pueden bifurcarse, un proyect puede tener muchas ramas 
+//en las cuales quizas el proyecto es distinto
+
+//Se crea nueva rama
+git checkout -b <nombre rama nueva>
+//Se realizan algunos cambios en esta rama 
+//Para eliminar una rama 
+git branch -D <nombreRama>
+
+//para cambiar a otra rama
+git checkout <nombreRama>
+
+//Para fucionar dos ramas (merge) primero hay que moverse a la rama 
+//que tendra el resultado final
+git checkout master
+//luego se realiza el merge (fución)
+git merge <ramaQueVamosAFucionar>
+
+//Ligar repositorio local al repositorio remoto
+git remote add origin https://github.com/NestorJavier/CalendarioTutorialGit.git
+
+//Publicar repositorio (subir archivos)
+git push -u origin master
+
+///Agregar readme
+README.md
+
+//Clonar repositorio
+git clone urldeproyecto
+
+//una vez que se ha clonado el proyecto y alguie
+// ha realizado cambios en el repositorio en
+// linea para actualizar nuestro repositorio local hay que 
+// hacer un pull
+git pull origin master
